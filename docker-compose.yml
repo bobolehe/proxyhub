@@ -1,0 +1,8 @@
+version: '3.0'
+
+services:
+  proxyhub:
+    image: bobolehe/proxyhub:latest
+    container_name: proxyhub
+    ports:
+      - "8848:8888"
