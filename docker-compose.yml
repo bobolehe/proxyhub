@@ -6,3 +6,4 @@ services:
     container_name: proxyhub
     ports:
       - "8848:8888"
+    restart: unless-stopped
