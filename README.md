@@ -42,7 +42,28 @@ flask run -p 8888 -h 0.0.0.0
 | /proxy/confirm/get/?url={url} | Obtain the available proxy for verifying the specified URL   |
 | /proxy/confirm/all/?url={url} | Obtain all available proxies for verifying the specified URL |
 
+## Start via docker
 
+Docker needs to be installed and the related installation can be solved by yourself.
+
+Modify the yml file in the directory
+
+```
+version: '3.0'
+
+services:
+   proxyhub:
+     image: bobolehe/proxyhub:latest
+     container_name: proxyhub
+     ports:
+       - "This can be modified to local access port: 8888"
+
+```
+
+```
+#Background startup
+docker-compose up -d
+```
 
 # Schedule List
 
