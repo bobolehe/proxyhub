@@ -18,7 +18,7 @@ from ...task_tool.apscheduler_task import scheduler
 proxy_bp = Blueprint('proxy', __name__, url_prefix='/proxy')
 
 query_task, query_task_err = apscheduler_task.assignments(scheduler, query_proxy)
-apscheduler_task.cron_scheduled_tasks(scheduler, query_proxy, cron='* 8 * * *')
+apscheduler_task.cron_scheduled_tasks(scheduler, query_proxy, cron='10 8 * * *')
 
 
 @proxy_bp.route('/')
@@ -63,7 +63,8 @@ def proxy():
         BaseConfig.VERIFY_URL.append(url)
         # redis中读取
         job, event = apscheduler_task.assignments(scheduler, run_check, parameters=[url])
-        apscheduler_task.scheduled_tasks(scheduler, run_check, parameters=[url], sleep=1800)
+        job = apscheduler_task.scheduled_tasks(scheduler, run_check, parameters=[url], sleep=1800)
+        BaseConfig.task_list[url] = job
         msg = f"已提交验证，稍后进行获取即可通过id{job.id}id可查询任务状态"
         return table_api(msg=msg, data=event)
     else:
@@ -109,3 +110,17 @@ def confirm(way):
         return table_api(msg=msg, data=data_list)
     else:
         return err_api(msg='请求失败，请检查必需参数')
+
+
+@proxy_bp.route('/del/', methods=["GET"])
+@authorize()
+def del_task():
+    url = request.args.get('url')
+    if not url:
+        return err_api(msg='请求失败，请检查必需参数')
+    if BaseConfig.task_list.get(url):
+        job = BaseConfig.task_list[url]
+    else:
+        return err_api(msg='任务不存在')
+    scheduler.remove_job(job.id)
+    return success_api(msg='删除成功')

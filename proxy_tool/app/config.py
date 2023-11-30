@@ -62,3 +62,5 @@ class BaseConfig:
     JSON_AS_ASCII = False
 
     VERIFY_URL = []
+
+    task_list = {}

@@ -1,0 +1,66 @@
+2023-11-30 17:20:11,382 - INFO - Scheduler started
+2023-11-30 17:20:11,434 - ERROR - Unable to restore job "b'1273b472a87e4d7bbe4f70404c6e8296'" -- removing it
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 135, in _reconstitute_jobs
+    jobs.append(self._reconstitute_job(job_state))
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 123, in _reconstitute_job
+    job_state = pickle.loads(job_state)
+ModuleNotFoundError: No module named 'pytz_deprecation_shim'
+2023-11-30 17:20:11,450 - ERROR - Unable to restore job "b'1c392a568049425ab95d4c4bfc478207'" -- removing it
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 135, in _reconstitute_jobs
+    jobs.append(self._reconstitute_job(job_state))
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 123, in _reconstitute_job
+    job_state = pickle.loads(job_state)
+ModuleNotFoundError: No module named 'pytz_deprecation_shim'
+2023-11-30 17:20:11,451 - ERROR - Unable to restore job "b'30d1b51564e14a11aaa0cf9b7454b90a'" -- removing it
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 135, in _reconstitute_jobs
+    jobs.append(self._reconstitute_job(job_state))
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 123, in _reconstitute_job
+    job_state = pickle.loads(job_state)
+ModuleNotFoundError: No module named 'pytz_deprecation_shim'
+2023-11-30 17:20:11,452 - ERROR - Unable to restore job "b'975a8c2f27ed4ff8837928f0b5d2ccff'" -- removing it
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 135, in _reconstitute_jobs
+    jobs.append(self._reconstitute_job(job_state))
+  File "D:\anaconda3\envs\proxy_tool\lib\site-packages\apscheduler\jobstores\redis.py", line 123, in _reconstitute_job
+    job_state = pickle.loads(job_state)
+ModuleNotFoundError: No module named 'pytz_deprecation_shim'
+2023-11-30 17:20:11,469 - WARNING - Run time of job "query_proxy (trigger: cron[month='*', day='*', day_of_week='*', hour='8', minute='*'], next run at: 2023-11-23 08:00:00 CST)" was missed by 8:21:11.469375
+2023-11-30 17:20:11,470 - INFO - Added job "query_proxy" to job store "redis"
+2023-11-30 17:20:11,471 - INFO - Running job "query_proxy (trigger: date[2023-11-30 09:20:11 UTC], next run at: 2023-11-30 09:20:11 UTC)" (scheduled at 2023-11-30 09:20:11.387205+00:00)
+2023-11-30 17:20:11,471 - INFO - Removed job b7aac9a91f0b43719dd70f3e4f2a3df9
+2023-11-30 17:20:11,472 - INFO - Added job "query_proxy" to job store "redis"
+2023-11-30 17:20:11,496 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8888
+ * Running on http://192.168.60.57:8888
+2023-11-30 17:20:11,496 - INFO - [33mPress CTRL+C to quit[0m
+2023-11-30 17:20:17,885 - INFO - 存储redis成功
+2023-11-30 17:20:49,196 - INFO - 存储redis成功
+2023-11-30 17:20:56,682 - INFO - Scheduler started
+2023-11-30 17:20:56,691 - INFO - Added job "query_proxy" to job store "redis"
+2023-11-30 17:20:56,691 - INFO - Running job "query_proxy (trigger: date[2023-11-30 09:20:56 UTC], next run at: 2023-11-30 09:20:56 UTC)" (scheduled at 2023-11-30 09:20:56.683026+00:00)
+2023-11-30 17:20:56,692 - INFO - Removed job ab4065de382a48d0a421a12ed49747b2
+2023-11-30 17:20:56,692 - INFO - Added job "query_proxy" to job store "redis"
+2023-11-30 17:20:56,702 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8888
+ * Running on http://192.168.60.57:8888
+2023-11-30 17:20:56,702 - INFO - [33mPress CTRL+C to quit[0m
+2023-11-30 17:21:46,851 - INFO - 存储redis成功
+2023-11-30 17:22:19,113 - INFO - Added job "run_check" to job store "redis"
+2023-11-30 17:22:19,114 - INFO - Running job "run_check (trigger: date[2023-11-30 09:22:19 UTC], next run at: 2023-11-30 09:22:19 UTC)" (scheduled at 2023-11-30 09:22:19.112834+00:00)
+2023-11-30 17:22:19,115 - INFO - Removed job 148384cdd141421485d3db55e1c0d061
+2023-11-30 17:22:19,145 - INFO - Added job "run_check" to job store "redis"
+2023-11-30 17:22:19,145 - INFO - 192.168.60.57 - - [30/Nov/2023 17:22:19] "GET /proxy/verify/?url=https://github.com/projectdiscovery/nuclei-templates HTTP/1.1" 200 -
+2023-11-30 17:22:19,230 - INFO - 需要验证数据量1563
+2023-11-30 17:22:47,328 - INFO - 存储redis成功
+2023-11-30 17:22:48,640 - INFO - 存储redis成功
+2023-11-30 17:22:55,865 - INFO - 存储redis成功
+2023-11-30 17:23:39,184 - INFO - 存储redis成功
+2023-11-30 17:24:00,832 - INFO - 存储redis成功
+2023-11-30 17:24:02,206 - INFO - 存储redis成功
+2023-11-30 17:24:03,707 - INFO - 存储redis成功
+2023-11-30 17:24:03,707 - INFO - Job "query_proxy (trigger: date[2023-11-30 09:20:56 UTC], next run at: 2023-11-30 09:20:56 UTC)" executed successfully
